@@ -1,6 +1,50 @@
-/* ========== GOOGLE FONTS ========== */
+/* IMPORT */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-/* ========== VARIABLE ========== */
+
+/* BASE */
+*,
+::before,
+::after {
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   margin: var(--headerHeight) 0 0 0;
+   font-family: var(--bodyFont);
+   font-size: var(--normalFontSize);
+   background-color: var(--bodyColor);
+   color: var(--textColor);
+   line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+   margin: 0;
+}
+
+ul {
+   padding: 0;
+   list-style: none;
+}
+
+a {
+   text-decoration: none;
+}
+
+img {
+   max-width: 100%;
+   height: auto;
+}
+
+/* VARIABEL */
 :root {
    --headerHeight: 3rem;
    /* ========== Colors ========== */
@@ -47,88 +91,7 @@
    }
 }
 
-/* ========== BASE ========== */
-*,
-::before,
-::after {
-   -webkit-box-sizing: border-box;
-   box-sizing: border-box;
-}
-
-html {
-   scroll-behavior: smooth;
-}
-
-/* Variable Dark Theme */
-body.dark-theme {
-   --titleColor: #f1f3f2;
-   --textColor: #c7d1cc;
-   --bodyColor: #1d2521;
-   --containerColor: #27302c;
-}
-
-/* Button Dark Light */
-.change-theme {
-   position: absolute;
-   right: 1rem;
-   top: 1.8rem;
-   color: var(--textColor);
-   font-size: 1rem;
-   cursor: pointer;
-}
-
-body {
-   margin: var(--headerHeight) 0 0 0;
-   font-family: var(--bodyFont);
-   font-size: var(--normalFontSize);
-   background-color: var(--bodyColor);
-   color: var(--textColor);
-   line-height: 1.6;
-}
-
-h1,
-h2,
-h3,
-p,
-ul {
-   margin: 0;
-}
-
-ul {
-   padding: 0;
-   list-style: none;
-}
-
-a {
-   text-decoration: none;
-}
-
-img {
-   max-width: 100%;
-   height: auto;
-}
-
-/* ========== CLASS CSS ========== */
-.section {
-   padding: 4rem 0 2rem;
-}
-
-.section-title {
-   text-align: center;
-   font-size: var(--h1FontSize);
-   color: var(--titleColor);
-   margin-bottom: var(--mb3);
-}
-
-.section-subtitle {
-   text-align: center;
-   display: block;
-   color: var(--firstColor);
-   font-weight: var(--fontMedium);
-   margin-bottom: var(--mb1);
-}
-
-/* ========== Layout ========== */
+/* LAYOUT */
 .bd-container {
    max-width: 960px;
    width: calc(100% - 2rem);
@@ -151,6 +114,26 @@ img {
    background-color: var(--bodyColor);
 }
 
+.section {
+   padding: 4rem 0 2rem;
+}
+
+.section-title {
+   text-align: center;
+   font-size: var(--h1FontSize);
+   color: var(--titleColor);
+   margin-bottom: var(--mb3);
+}
+
+.section-subtitle {
+   text-align: center;
+   display: block;
+   color: var(--firstColor);
+   font-weight: var(--fontMedium);
+   margin-bottom: var(--mb1);
+}
+
+/* CODE */
 /* ========== NAV ========== */
 .nav {
    max-width: 1024px;
@@ -195,40 +178,6 @@ img {
    cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
-   .nav__menu {
-      position: fixed;
-      top: -100%;
-      left: 0;
-      width: 100%;
-      padding: 1.5rem 0 1rem;
-      text-align: center;
-      background-color: var(--bodyColor);
-      -webkit-transition: 0.4s;
-      transition: 0.4s;
-      -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-      border-radius: 0 0 1rem 1rem;
-      z-index: var(--zFixed);
-   }
-}
-
-/* ========== Show Menu ========== */
-.show-menu {
-   top: var(--headerHeight);
-}
-
-/* ========== Active Menu ========== */
-.active-link {
-   color: var(--firstColor);
-}
-
-/* ========== Change Background Reader ========== */
-.scroll-header {
-   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 /* ========== SCROLL TOP ========== */
 .scrolltop {
    position: fixed;
@@ -259,12 +208,6 @@ img {
 .scrolltop__icon {
    font-size: 1.8rem;
    color: var(--bodyColor);
-}
-
-/* ========== Show Scroll Top ========== */
-.scroll-top {
-   visibility: visible;
-   bottom: 1.5rem;
 }
 
 /* ========== HOME ========== */
@@ -492,7 +435,25 @@ img {
    margin-top: 3.5rem;
 }
 
-/* ========== MEDIA QUERIES ========== */
+/* MEDIA QUERIES */
+@media screen and (max-width: 768px) {
+   .nav__menu {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      padding: 1.5rem 0 1rem;
+      text-align: center;
+      background-color: var(--bodyColor);
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+      -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 0 0 1rem 1rem;
+      z-index: var(--zFixed);
+   }
+}
+
 @media screen and (min-width: 576px) {
    .home__container,
    .about__container,
@@ -594,4 +555,46 @@ img {
       column-gap: 7rem;
    }
 }
+
+/* JAVASCRIPT CLASS */
+/* Variable Dark Theme */
+body.dark-theme {
+   --titleColor: #f1f3f2;
+   --textColor: #c7d1cc;
+   --bodyColor: #1d2521;
+   --containerColor: #27302c;
+}
+
+/* Button Dark Light */
+.change-theme {
+   position: absolute;
+   right: 1rem;
+   top: 1.8rem;
+   color: var(--textColor);
+   font-size: 1rem;
+   cursor: pointer;
+}
+
+/* ========== Show Menu ========== */
+.show-menu {
+   top: var(--headerHeight);
+}
+
+/* ========== Active Menu ========== */
+.active-link {
+   color: var(--firstColor);
+}
+
+/* ========== Change Background Reader ========== */
+.scroll-header {
+   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== Show Scroll Top ========== */
+.scroll-top {
+   visibility: visible;
+   bottom: 1.5rem;
+}
+
 /*# sourceMappingURL=style.css.map */
